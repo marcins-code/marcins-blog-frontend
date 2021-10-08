@@ -4,6 +4,17 @@ import styled, { css } from 'styled-components';
 import { darken } from 'polished';
 import IconIcomoon from '../../atoms/IconIcomoon/IconIcomoon';
 
+
+
+
+
+
+
+
+
+
+
+
 const StyledRegularButton = styled.button`
   border-radius: 14px;
   padding: 10px 20px;
@@ -18,9 +29,8 @@ const StyledRegularButton = styled.button`
     margin-right: 5px;
     vertical-align: text-bottom;
   }
-  ${(props) =>
-    props.buttonColor &&
-    css`
+  ${(props) => props.buttonColor
+    && css`
       background: linear-gradient(
         to top right,
         ${({ theme }) => darken(0.13, theme[props.buttonColor])},
@@ -36,23 +46,23 @@ const StyledRegularButton = styled.button`
         transition: all 200ms linear;
       }
     `};
-  ${(props) =>
-    props.buttonSize === 'buttonBig' &&
-    css`
+  ${(props) => props.buttonSize === 'buttonBig'
+    && css`
       font-size: 2.3rem;
       padding: 15px 25px;
       text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.5);
     `}
 
-  ${(props) =>
-    props.buttonSize === 'buttonSmall' &&
-    css`
+  ${(props) => props.buttonSize === 'buttonSmall'
+    && css`
       font-size: 1.5rem;
       padding: 5px 15px;
     `}
 `;
 
-const RegularButton = ({ buttonSize, buttonColor, buttonLabel, buttonIcon, type, onClick }) => (
+const RegularButton = ({
+  buttonSize, buttonColor, buttonLabel, buttonIcon, type, onClick,
+}) => (
   <StyledRegularButton
     type={type}
     buttonSize={buttonSize}
