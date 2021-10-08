@@ -155,8 +155,9 @@ const SettingsPanel = () => {
 
   const nodeRef = useRef(null);
   const buttonRef = useRef(null);
-  const { chooseLanguage, chooseTheme, chooseLayout, rememberSettingsPH } =
-    settingsPanelItems[appLanguage];
+  const {
+    chooseLanguage, chooseTheme, chooseLayout, rememberSettingsPH,
+  } = settingsPanelItems[appLanguage];
 
   const panel = (
     <>
