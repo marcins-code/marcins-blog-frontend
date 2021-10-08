@@ -13,7 +13,6 @@ import AdminArticleTypes from './views/admin/AdminArticleTypes';
 import AdminGlossary from './views/admin/AdminGlossary';
 import Login from './views/admin/Login';
 import { useAuth } from './hooks/useAuth';
-// import NotFound from './views/error/404-page';
 
 const App = () => {
   const authHandler = useAuth();
