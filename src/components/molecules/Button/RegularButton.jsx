@@ -4,17 +4,6 @@ import styled, { css } from 'styled-components';
 import { darken } from 'polished';
 import IconIcomoon from '../../atoms/IconIcomoon/IconIcomoon';
 
-
-
-
-
-
-
-
-
-
-
-
 const StyledRegularButton = styled.button`
   border-radius: 14px;
   padding: 10px 20px;
