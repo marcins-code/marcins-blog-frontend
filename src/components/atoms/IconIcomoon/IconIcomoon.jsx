@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const IconIcomoon = ({ iconName, iconSize, spin, moreClasses, onClick }) => (
+const IconIcomoon = ({
+  iconName, iconSize, spin, moreClasses, onClick,
+}) => (
   <span
     data-testid="iconmoon"
     role="none"
