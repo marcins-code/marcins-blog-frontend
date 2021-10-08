@@ -3,9 +3,8 @@ import styled, { css } from 'styled-components';
 import PropTypes from 'prop-types';
 
 const StyledInput = styled.input`
-  ${(props) =>
-    props.notCheckedColor &&
-    css`
+  ${(props) => props.notCheckedColor
+    && css`
       background: ${({ theme }) => theme[props.notCheckedColor]};
     `}
   margin: 10px;
@@ -18,9 +17,8 @@ const StyledInput = styled.input`
   border-radius: 20px;
   box-shadow: 0 0 0 4px #353535, 0 0 0 5px #3e3e3e, inset 0 0 10px rgba(0, 0, 0, 1);
   &:checked {
-    ${(props) =>
-      props.switchColor &&
-      css`
+    ${(props) => props.switchColor
+      && css`
         background: ${({ theme }) => theme[props.switchColor]};
         box-shadow: 0 0 0 4px #353535, 0 0 0 5px #3e3e3e, inset 0 0 10px rgba(0, 0, 0, 1);
       `}
