@@ -13,6 +13,7 @@ describe('Heading test', () => {
     expect(heading).toBeInTheDocument();
     expect(heading.outerHTML).toEqual(`<h1>${testTile}</h1>`);
     expect(heading.innerHTML).toEqual(testTile);
+    expect(screen.getByText(testTile)).toBeInTheDocument();
   });
 
   it('Should be H2 with "big" prop', () => {
