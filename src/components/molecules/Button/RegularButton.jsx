@@ -12,7 +12,7 @@ const StyledRegularButton = styled.button`
   border: none;
   font-size: inherit;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
-  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5) inset, 0 0 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5) inset, 0 0 3px rgba(0, 0, 0, 0.5);
   cursor: pointer;
   > span {
     margin-right: 5px;
@@ -26,12 +26,12 @@ const StyledRegularButton = styled.button`
         ${({ theme }) => theme[props.buttonColor]}
       );
       box-shadow: 0 2px 4px ${({ theme }) => darken(0.15, theme[props.buttonColor])},
-        0 5px 5px 4px rgba(10, 10, 10, 0.7);
+        0 2px 2px 2px rgba(10, 10, 10, 0.7);
       transition: box-shadow 200ms linear;
       &:hover,
       &:active {
         box-shadow: 0 2px 4px ${({ theme }) => darken(0.15, theme[props.buttonColor])},
-          0 0 15px 3px rgba(0, 0, 0, 0.3);
+          0 1px 2px  rgba(0, 0, 0, 0.4);
         transition: all 200ms linear;
       }
     `};
