@@ -1,6 +1,7 @@
 import React from 'react';
 import { act, render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
+import 'jest-styled-components';
 import App from '../../../../App';
 import { mainMenuItems } from '../../../../languages/menus';
 
@@ -44,6 +45,15 @@ describe('Testing navigation', () => {
       await new Promise((r) => setTimeout(r, 1500));
       expect(screen.queryByTestId('top-navigation')).toBeInTheDocument();
       expect(screen.queryByTestId('sidebar-navigation')).not.toBeInTheDocument();
+    });
+    it('Should be sidebar menu in document when menuSwitch is checked and top-menu on click again', async () => {
+      act(() => {
+        screen.getByTestId('menuSwitch').dispatchEvent(new MouseEvent('click', { bubbles: true }));
+      });
+      await new Promise((r) => setTimeout(r, 1500));
+      expect(screen.queryByTestId('sidebar-navigation-nav')).toBeInTheDocument();
+      expect(screen.queryByTestId('sidebar-navigation-nav')).toHaveStyleRule('min-height', '100vh');
+      expect(screen.queryByTestId('sidebar-navigation-nav')).toHaveStyleRule('position', 'fixed');
     });
   });
   describe('Navigation links text test when lang is change', () => {
@@ -188,22 +198,3 @@ describe('Testing mobile navigation', () => {
     });
   });
 });
-// it('Should be sidebar navigation on menuSwitcher click', async () => {
-//   fireEvent.click(menuSwitcher);
-//   // wait for finish animation
-//   await new Promise((r) => setTimeout(r, 1500));
-//   const topMenuNavigation = screen.queryByTestId('top-navigation');
-//   const sidebarNavigation = screen.queryByTestId('sidebar-navigation');
-//   expect(sidebarNavigation).toBeInTheDocument();
-//   expect(topMenuNavigation).not.toBeInTheDocument();
-// });
-// it('Should should be mogile toggole butoon on mobile ', async () => {
-//   // global.innerWidth = 500;
-//   // console.log(global.innerWidth);
-//   global.innerWidth = 500;
-//
-//   // Trigger the window resize event.
-//   act(() => { global.dispatchEvent(new Event('resize')); });
-//   const mobileNavToggleButton = screen.getByTestId('mobile-navigation-toggle-button');
-//   expect(mobileNavToggleButton).toBeInTheDocument();
-// });
